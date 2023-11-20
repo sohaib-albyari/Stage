@@ -137,7 +137,6 @@
       stageObj.src = "stage.png";
 
       var item = (document.querySelector("#clip").onchange = (e) => {
-        console.log(e.target.value);
         var imageObj = new Image();
         imageObj.onload = function () {
           var yoda = new Konva.Image({
@@ -146,17 +145,25 @@
             image: imageObj,
             draggable: true,
           });
+
           // add the shape to the layer
           layer.add(yoda);
 
-           // change zindex
-          yoda.on("dragstart", function() {
+          // change zindex
+          yoda.on("dragstart", function () {
             this.moveToTop();
             layer.draw();
-        });
+          });
+          
+          // delete item
+
+          yoda.on("dblclick dbltap", function () {
+            this.destroy();
+            layer.draw();
+          });
         };
         imageObj.src = e.target.value;
-        e.target.value ='';
+        e.target.value = "";
       });
 
       
