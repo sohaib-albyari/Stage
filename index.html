@@ -148,6 +148,12 @@
           });
           // add the shape to the layer
           layer.add(yoda);
+
+           // change zindex
+          yoda.on("dragstart", function() {
+            this.moveToTop();
+            layer.draw();
+        });
         };
         imageObj.src = e.target.value;
         e.target.value ='';
