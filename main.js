@@ -57,7 +57,7 @@ items.onchange = (e) => {
 
             });
             cancel.addEventListener("click", function() {
-                item.removeEventListener();
+                // item.removeEventListener();
                 // item.off("dblclick dbltap");
 
                 conformation.style.display = "none";
