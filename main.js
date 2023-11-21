@@ -53,12 +53,12 @@ items.onchange = (e) => {
             remove.addEventListener("click", function() {
                 item.destroy();
                 conformation.style.display = "none";
-                item.off("dblclick dbltap");
+                // item.off("dblclick dbltap");
 
             });
             cancel.addEventListener("click", function() {
                 item.removeEventListener();
-                item.off("dblclick dbltap");
+                // item.off("dblclick dbltap");
 
                 conformation.style.display = "none";
             });
