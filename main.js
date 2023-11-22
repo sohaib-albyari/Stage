@@ -1,8 +1,10 @@
 var width = window.innerWidth;
 var height = window.innerHeight;
-var conformation = document.querySelector(".overlay");
-var remove = document.querySelector("#remove");
-var cancel = document.querySelector("#cancel");
+// var conformation = document.querySelector(".overlay");
+// var remove = document.querySelector("#remove");
+// var cancel = document.querySelector("#cancel");
+
+
 var items = document.querySelector("#clip");
 var stage = new Konva.Stage({
     container: "container",
@@ -48,23 +50,29 @@ items.onchange = (e) => {
         });
 
         // delete item
-        item.on("dblclick dbltap", function(e) {
-            conformation.style.display = "block";
-            remove.addEventListener("click", function() {
-                item.destroy();
-                conformation.style.display = "none";
-                // item.off("dblclick dbltap");
-
-            });
-            cancel.addEventListener("click", function() {
-                // item.removeEventListener();
-                // item.off("dblclick dbltap");
-
-                conformation.style.display = "none";
-            });
-            console.log(e.type);
+item.on("dblclick dbltap", function() {
+                this.destroy();
             layer.draw();
         });
+
+        
+        // item.on("dblclick dbltap", function(e) {
+        //     conformation.style.display = "block";
+        //     remove.addEventListener("click", function() {
+        //         item.destroy();
+        //         conformation.style.display = "none";
+        //         // item.off("dblclick dbltap");
+
+        //     });
+        //     cancel.addEventListener("click", function() {
+        //         item.removeEventListener();
+        //         item.off("dblclick dbltap");
+
+        //         conformation.style.display = "none";
+        //     });
+        //     console.log(e.type);
+        //     layer.draw();
+        // });
 
 
     };
